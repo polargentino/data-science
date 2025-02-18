@@ -9,3 +9,6 @@ b = tf.constant([[5, 6], [7, 8]])
 result = tf.matmul(a, b)
 print("Resultado de la multiplicación de matrices:")
 print(result.numpy())
+# Resultado de la multiplicación de matrices:
+# [[19 22]
+#  [43 50]]

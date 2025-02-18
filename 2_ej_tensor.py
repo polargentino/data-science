@@ -9,3 +9,4 @@ resultado = a + b
 
 # Imprimir el resultado
 print("La suma es:", resultado.numpy())  # .numpy() para obtener el valor como número normal
+# La suma es: 2
