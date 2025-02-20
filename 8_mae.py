@@ -27,7 +27,7 @@ melbourne_model.fit(X, y)
 
 
 
-
+# Una vez que tenemos un modelo, así es como calculamos el error absoluto medio:
 
 from sklearn.metrics import mean_absolute_error
 # 📌 Explicación rápida:
