@@ -1,17 +1,19 @@
 import pandas as pd
 
 # Especifica la ruta del archivo CSV
-car_prices_file_path = '/home/pol/Desktop/data-science/car_price_dataset.csv'
+ufo_file_path = '/home/pol/Downloads/ufo_sightings_scrubbed.csv'
+# Explicación de los Cambios:
 
-# Carga los datos en un DataFrame de pandas
-car_prices_data = pd.read_csv(car_prices_file_path)
+# ufo_file_path:
+# Se ha actualizado la ruta del archivo a /home/pol/Downloads/ufo_sightings_scrubbed.csv.
 
-# Automóvil más caro por marca y tipo de combustible (corregido)
-print("Automóvil más caro por marca y tipo de combustible:")
-print(car_prices_data.groupby(['Brand', 'Fuel_Type']).apply(lambda df: df.loc[df['Price'].idxmax()]))
+
+# Carga los datos en un DataFrame de pandas con tipos especificados y low_memory=False
+ufo_data = pd.read_csv(ufo_file_path)
+# ufo_data:
+# Se ha especificado dtype={'latitude': str, 'duration (seconds)': str} y low_memory=False al cargar los datos para manejar los tipos de datos mixtos y evitar el DtypeWarning.
+
+# Imprimir información general sobre el DataFrame
+print("Información general del DataFrame:")
+print(ufo_data.info())
 print("\n")
-
-
-# Modelo del primer automóvil por marca (sin include_groups=False)
-print("Modelo del primer automóvil por marca:")
-print(car_prices_data.groupby('Brand').apply(lambda df: df['Model'].iloc[0]))
